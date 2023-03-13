@@ -1,7 +1,8 @@
 const express = require('express')
 const path = require('path')
 
-const app = express()
+const app = express();
+app.use(express.static('publicFiles'));
 
 app.get('/', (req, res) => {
     res.send(`<body>
@@ -12,11 +13,12 @@ app.get('/', (req, res) => {
 
 app.get('/:file', (req, res) => {
     const fileExt = path.extname(req.params.file);
+    const filePath = './' + req.params.file;
     if(fileExt == '.mp4'){
         res.send(`<body>
                     <h1>Hello World Player!</h1>
                     <video controls>
-                        <source src="${req.params.file}" type="video/mp4">
+                        <source src="${filePath}" type="video/mp4">
                         przeglądarka nie obsługuje video
                     </video>
                  </body>`);
@@ -25,7 +27,7 @@ app.get('/:file', (req, res) => {
         res.send(`<body>
                     <h1>Hello World Player!</h1>
                     <audio controls>
-                        <source src="${req.params.file}" type="audio/mpeg">
+                        <source src="${filePath}" type="audio/mpeg">
                         przeglądarka nie obsługuje audio
                     </audio>
                   </body>`);       
@@ -46,11 +48,11 @@ app.get('/:file1/:file2', (req, res) => {
         res.send(`<body>
                     <h1>Hello World Player!</h1>
                     <video controls>
-                        <source src="${req.params.file1}" type="video/mp4">
+                        <source src="${'./' + req.params.file1}" type="video/mp4">
                         przeglądarka nie obsługuje video
                     </video>
                     <audio controls>
-                        <source src="${req.params.file2}" type="audio/mpeg">
+                        <source src="${'./' + req.params.file2}" type="audio/mpeg">
                         przeglądarka nie obsługuje audio
                     </audio>
                  </body>`);
@@ -59,11 +61,11 @@ app.get('/:file1/:file2', (req, res) => {
         res.send(`<body>
                     <h1>Hello World Player!</h1>
                     <video controls>
-                        <source src="${req.params.file2}" type="video/mp4">
+                        <source src="${'./' + req.params.file2}" type="video/mp4">
                         przeglądarka nie obsługuje video
                     </video>
                     <audio controls>
-                        <source src="${req.params.file1}" type="audio/mpeg">
+                        <source src="${'./' + req.params.file1}" type="audio/mpeg">
                         przeglądarka nie obsługuje audio
                     </audio>
                   </body>`);       

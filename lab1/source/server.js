@@ -17,7 +17,7 @@ app.get('/:file', (req, res) => {
     if(fileExt == '.mp4'){
         res.send(`<body>
                     <h1>Hello World Player!</h1>
-                    <video controls>
+                    <video id="videoPlayer" controls>
                         <source src="${filePath}" type="video/mp4">
                         przeglądarka nie obsługuje video
                     </video>
@@ -26,7 +26,7 @@ app.get('/:file', (req, res) => {
     else if(fileExt == '.mp3'){
         res.send(`<body>
                     <h1>Hello World Player!</h1>
-                    <audio controls>
+                    <audio id="audioPlayer" controls>
                         <source src="${filePath}" type="audio/mpeg">
                         przeglądarka nie obsługuje audio
                     </audio>
@@ -43,15 +43,14 @@ app.get('/:file', (req, res) => {
 app.get('/:file1/:file2', (req, res) => {
     const file1Ext = path.extname(req.params.file1);
     const file2Ext = path.extname(req.params.file2);
-
     if(file1Ext == '.mp4'){
         res.send(`<body>
                     <h1>Hello World Player!</h1>
-                    <video controls>
+                    <video id="videoPlayer" controls>
                         <source src="${'./' + req.params.file1}" type="video/mp4">
                         przeglądarka nie obsługuje video
                     </video>
-                    <audio controls>
+                    <audio id="audioPlayer" controls>
                         <source src="${'./' + req.params.file2}" type="audio/mpeg">
                         przeglądarka nie obsługuje audio
                     </audio>
@@ -60,11 +59,11 @@ app.get('/:file1/:file2', (req, res) => {
     else if(file1Ext == '.mp3'){
         res.send(`<body>
                     <h1>Hello World Player!</h1>
-                    <video controls>
+                    <video id="videoPlayer" controls>
                         <source src="${'./' + req.params.file2}" type="video/mp4">
                         przeglądarka nie obsługuje video
                     </video>
-                    <audio controls>
+                    <audio id="audioPlayer" controls>
                         <source src="${'./' + req.params.file1}" type="audio/mpeg">
                         przeglądarka nie obsługuje audio
                     </audio>

@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/:file', (req, res) => {
     const fileExt = path.extname(req.params.file);
-    const filePath = './' + req.params.file;
+    const filePath = '/' + req.params.file;
     if(fileExt == '.mp4'){
         res.send(`<body>
                     <h1>Hello World Player!</h1>
@@ -43,28 +43,34 @@ app.get('/:file', (req, res) => {
 app.get('/:file1/:file2', (req, res) => {
     const file1Ext = path.extname(req.params.file1);
     const file2Ext = path.extname(req.params.file2);
+    var videoFile;
+    var audioFile;
     if(file1Ext == '.mp4'){
+        videoFile = '/' + req.params.file1;
+        audioFile = '/' + req.params.file2;
         res.send(`<body>
                     <h1>Hello World Player!</h1>
                     <video id="videoPlayer" controls>
-                        <source src="${'./' + req.params.file1}" type="video/mp4">
+                        <source src="${videoFile}" type="video/mp4">
                         przeglądarka nie obsługuje video
                     </video>
                     <audio id="audioPlayer" controls>
-                        <source src="${'./' + req.params.file2}" type="audio/mpeg">
+                        <source src="${audioFile}" type="audio/mpeg">
                         przeglądarka nie obsługuje audio
                     </audio>
                  </body>`);
     }
     else if(file1Ext == '.mp3'){
+        videoFile = '/' + req.params.file2;
+        audioFile = '/' + req.params.file1;
         res.send(`<body>
                     <h1>Hello World Player!</h1>
                     <video id="videoPlayer" controls>
-                        <source src="${'./' + req.params.file2}" type="video/mp4">
+                        <source src="${videoFile}" type="video/mp4">
                         przeglądarka nie obsługuje video
                     </video>
                     <audio id="audioPlayer" controls>
-                        <source src="${'./' + req.params.file1}" type="audio/mpeg">
+                        <source src="${audioFile}" type="audio/mpeg">
                         przeglądarka nie obsługuje audio
                     </audio>
                   </body>`);       
@@ -74,7 +80,7 @@ app.get('/:file1/:file2', (req, res) => {
                     <h1>Hello World Player!</h1>
                     <h2>Podales zle pliki</h2>
                   </body>`);
-    }           
+    }       
 })
 
 

@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
                         <source src="${req.query.videoFile}" type="video/mp4">
                         przeglądarka nie obsługuje video
                     </video>`
+            page += `<button id="videoCancel" type="button" onclick="cancelVideo()">Anuluj video</button> <br>`;
         }
     }
     if(req.query.audioFile != undefined){

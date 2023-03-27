@@ -37,7 +37,13 @@ app.get('/', (req, res) => {
                     if (video) {
                         video.src = 'cancel.mp4';
                     }
-                } 
+                }
+                function cancelAudio() {
+                    const audio = document.getElementById('audioPlayer');
+                    if (audio) {
+                        audio.src = 'cancel.mp3';
+                    }
+                }  
             </script>`
     page += `</body>`;
     res.send(page);

@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
                         <source src="${req.query.audioFile}" type="audio/mpeg">
                         przeglądarka nie obsługuje audio
                     </audio>`;
+            page += `<button id="audioCancel" type="button" onclick="cancelAudio()">Anuluj audio</button> <br>`;
         }
     }
     const imgExts = [".jpg", ".jpeg", ".png", ".gif"];

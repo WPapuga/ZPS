@@ -30,6 +30,14 @@ app.get('/', (req, res) => {
             page += `<img id="posterImage" src="${req.query.imgFile}" alt="Poster Image">`;
         }
     }
+    page += `<script>
+                function cancelVideo() {
+                    const video = document.getElementById('videoPlayer');
+                    if (video) {
+                        video.src = 'cancel.mp4';
+                    }
+                } 
+            </script>`
     page += `</body>`;
     res.send(page);
 })

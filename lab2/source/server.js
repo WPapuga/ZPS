@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
                     </audio>`;
         }
     }
-    var page = `</body>`;
+    page += `</body>`;
     res.send(page);
 })
 

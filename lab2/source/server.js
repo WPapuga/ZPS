@@ -23,6 +23,12 @@ app.get('/', (req, res) => {
                     </audio>`;
         }
     }
+    const imgExts = [".jpg", ".jpeg", ".png", ".gif"];
+    if(req.query.imgFile != undefined){
+        if(imgExts.includes(path.extname(req.query.imgFile).toLocaleLowerCase())){
+            page += `<img id="posterImage" src="${req.query.imgFile}" alt="Poster Image">`;
+        }
+    }
     page += `</body>`;
     res.send(page);
 })

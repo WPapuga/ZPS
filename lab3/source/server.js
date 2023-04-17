@@ -53,12 +53,14 @@ app.get('/', (req, res) => {
                 function cancelVideo() {
                     const video = document.getElementById('videoPlayer');
                     if (video) {
+                        video.children[0].src = "cancel.mp4";
                         video.src = 'cancel.mp4';
                     }
                 }
                 function cancelAudio() {
                     const audio = document.getElementById('audioPlayer');
                     if (audio) {
+                        audio.children[0].src = "cancel.mp3";
                         audio.src = 'cancel.mp3';
                     }
                 }

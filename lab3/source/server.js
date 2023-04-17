@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
                         <source src="${req.query.videoFile}" type="video/mp4">
                         przeglądarka nie obsługuje video
                     </video>`
-            page += `<button id="videoCancel" type="button" onclick="cancelVideo()">Anuluj video</button> <br>`;
+            page += `<br> <button id="videoCancel" type="button" onclick="cancelVideo()">Anuluj video</button> <br>`;
         }
     }
     if(req.query.audioFile != undefined){
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
                         <source src="${req.query.audioFile}" type="audio/mpeg">
                         przeglądarka nie obsługuje audio
                     </audio>`;
-            page += `<button id="audioCancel" type="button" onclick="cancelAudio()">Anuluj audio</button> <br>`;
+            page += `<br> <button id="audioCancel" type="button" onclick="cancelAudio()">Anuluj audio</button> <br>`;
         }
     }
     const imgExts = [".jpg", ".jpeg", ".png", ".gif"];

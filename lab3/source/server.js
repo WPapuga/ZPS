@@ -13,7 +13,8 @@ app.get('/', (req, res) => {
                         <source src="${req.query.videoFile}" type="video/mp4">
                         przeglądarka nie obsługuje video
                     </video>`
-            page += `<br> <button id="videoCancel" type="button" onclick="cancelVideo()">Anuluj video</button> <br>`;
+            page += `<br> <button id="videoCancel" type="button" onclick="cancelVideo()">Anuluj video</button>`;
+            page += `     <button id="videoAdd" type="button">Add video</button> <br>`
         }
     }
     if(req.query.audioFile != undefined){
@@ -22,13 +23,17 @@ app.get('/', (req, res) => {
                         <source src="${req.query.audioFile}" type="audio/mpeg">
                         przeglądarka nie obsługuje audio
                     </audio>`;
-            page += `<br> <button id="audioCancel" type="button" onclick="cancelAudio()">Anuluj audio</button> <br>`;
+            page += `<br> <button id="audioCancel" type="button" onclick="cancelAudio()">Anuluj audio</button>`;
+            page += `     <button id="audioAdd" type="button">Add audio</button> <br>`
+
         }
     }
     const imgExts = [".jpg", ".jpeg", ".png", ".gif"];
     if(req.query.imgFile != undefined){
         if(imgExts.includes(path.extname(req.query.imgFile).toLocaleLowerCase())){
             page += `<img id="posterImage" src="${req.query.imgFile}" alt="Poster Image">`;
+            page += `<br> <button id="imgAdd" type="button">Add image</button> <br>`
+
         }
     }
     page += `<table id="playlist_table">

@@ -5,7 +5,12 @@ const app = express();
 app.use(express.static('publicFiles'));
 
 app.get('/', (req, res) => {
-    var page = `<body>
+    var page = `<head>
+                <style>
+                    table, th, td {border: 1px solid;}
+                </style>
+                </head>
+                <body>
                     <h1>Hello World Player!</h1>`;
     if(req.query.videoFile != undefined){
         if(path.extname(req.query.videoFile) == '.mp4'){

@@ -31,6 +31,13 @@ app.get('/', (req, res) => {
             page += `<img id="posterImage" src="${req.query.imgFile}" alt="Poster Image">`;
         }
     }
+    page += `<table id="playlist_table">
+                <tr>
+                    <th>No.</th>
+                    <th>URL</th>
+                    <th>Type</th>
+                </tr>
+             </table>`;
     page += `<script>
                 function cancelVideo() {
                     const video = document.getElementById('videoPlayer');

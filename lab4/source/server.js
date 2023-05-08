@@ -73,6 +73,10 @@ app.get('/', (req, res) => {
                     id = id + 1;
                     row.insertCell(1).innerHTML = video.children[0].src;
                     row.insertCell(2).innerHTML = "Video";
+                    var button = document.createElement('button');
+                    button.className = "removeRowButton";
+                    button.innerText = "Delete";
+                    row.insertCell(3).append(button);
                 }
                 function addAudio() {
                     const table = document.getElementById('playlist_table');
@@ -82,6 +86,10 @@ app.get('/', (req, res) => {
                     id = id + 1;
                     row.insertCell(1).innerHTML = audio.children[0].src;
                     row.insertCell(2).innerHTML = "Audio";
+                    var button = document.createElement('button');
+                    button.className = "removeRowButton";
+                    button.innerText = "Delete";
+                    row.insertCell(3).append(button);
                 }
                 function addImage() {
                     const table = document.getElementById('playlist_table');
@@ -91,6 +99,10 @@ app.get('/', (req, res) => {
                     id = id + 1;
                     row.insertCell(1).innerHTML = image.src;
                     row.insertCell(2).innerHTML = "Image";
+                    var button = document.createElement('button');
+                    button.className = "removeRowButton";
+                    button.innerText = "Delete";
+                    row.insertCell(3).append(button);
                 }
             </script>`
     page += `</body>`;

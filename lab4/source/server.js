@@ -8,6 +8,8 @@ app.get('/', (req, res) => {
     var page = `<head>
                 <style>
                     table, th, td {border: 1px solid;}
+                    button {margin-bottom: 20px}
+                    .removeRowButton {margin-bottom: 0px}
                 </style>
                 </head>
                 <body>

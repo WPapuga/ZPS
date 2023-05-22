@@ -88,8 +88,11 @@ app.get('/', (req, res) => {
                     buttonDown.innerText = "Down";
                     buttonDown.setAttribute('onclick','deleteRow(this)');
 
-                    var row = document.createElement('row')
-                    row.insertCell(3).append(button);
+                    var lastCell = document.createElement('div')
+                    lastCell.append(button)
+                    lastCell.append(buttonUp)
+                    lastCell.append(buttonDown)
+                    row.insertCell(3).append(lastCell);
                 }
                 function addAudio() {
                     const table = document.getElementById('playlist_table');
@@ -112,7 +115,11 @@ app.get('/', (req, res) => {
                     buttonDown.innerText = "Down";
                     buttonDown.setAttribute('onclick','deleteRow(this)');
 
-                    row.insertCell(3).append(button);
+                    var lastCell = document.createElement('div')
+                    lastCell.append(button)
+                    lastCell.append(buttonUp)
+                    lastCell.append(buttonDown)
+                    row.insertCell(3).append(lastCell);
                 }
                 function addImage() {
                     const table = document.getElementById('playlist_table');

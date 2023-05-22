@@ -87,6 +87,12 @@ app.get('/', (req, res) => {
                     var buttonDown = document.createElement('button');
                     buttonDown.className = "moveRowDownButton";
                     buttonDown.innerText = "Down";
+                    buttonDown.addEventListener("click", function(){
+                        var row = this.parentNode.parentNode.parentNode
+                        if (row.rowIndex != row.parentNode.rows.length - 1) {
+                            row.parentNode.insertBefore(row.nextSibling, row)
+                        }
+                    })
 
                     var lastCell = document.createElement('div')
                     lastCell.append(button)
@@ -114,6 +120,12 @@ app.get('/', (req, res) => {
                     var buttonDown = document.createElement('button');
                     buttonDown.className = "moveRowDownButton";
                     buttonDown.innerText = "Down";
+                    buttonDown.addEventListener("click", function(){
+                        var row = this.parentNode.parentNode.parentNode
+                        if (row.rowIndex != row.parentNode.rows.length - 1) {
+                            row.parentNode.insertBefore(row.nextSibling, row)
+                        }
+                    })
 
                     var lastCell = document.createElement('div')
                     lastCell.append(button)
@@ -141,6 +153,12 @@ app.get('/', (req, res) => {
                     var buttonDown = document.createElement('button');
                     buttonDown.className = "moveRowDownButton";
                     buttonDown.innerText = "Down";
+                    buttonDown.addEventListener("click", function(){
+                        var row = this.parentNode.parentNode.parentNode
+                        if (row.rowIndex != row.parentNode.rows.length - 1) {
+                            row.parentNode.insertBefore(row.nextSibling, row)
+                        }
+                    })
                     
                     var lastCell = document.createElement('div')
                     lastCell.appendChild(button)

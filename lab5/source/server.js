@@ -53,6 +53,9 @@ app.get('/', (req, res) => {
              </table>`;
     page += `<script>
                 var id = 1;
+                var table = document.getElementById("playlist_table")
+                var header = table .rows[0];
+
                 function cancelVideo() {
                     const video = document.getElementById('videoPlayer');
                     if (video) {
@@ -84,6 +87,12 @@ app.get('/', (req, res) => {
                     var buttonUp = document.createElement('button');
                     buttonUp.className = "moveRowUpButton";
                     buttonUp.innerText = "Up";
+                    buttonUp.addEventListener("click", function(){
+                        var row = this.parentNode.parentNode.parentNode
+                        if (row.rowIndex != 1) {
+                            row.parentNode.insertBefore(row, row.previousSibling)
+                        }
+                    })
                     var buttonDown = document.createElement('button');
                     buttonDown.className = "moveRowDownButton";
                     buttonDown.innerText = "Down";
@@ -117,6 +126,12 @@ app.get('/', (req, res) => {
                     var buttonUp = document.createElement('button');
                     buttonUp.className = "moveRowUpButton";
                     buttonUp.innerText = "Up";
+                    buttonUp.addEventListener("click", function(){
+                        var row = this.parentNode.parentNode.parentNode
+                        if (row.rowIndex != 1) {
+                            row.parentNode.insertBefore(row, row.previousSibling)
+                        }
+                    })
                     var buttonDown = document.createElement('button');
                     buttonDown.className = "moveRowDownButton";
                     buttonDown.innerText = "Down";
@@ -150,6 +165,12 @@ app.get('/', (req, res) => {
                     var buttonUp = document.createElement('button');
                     buttonUp.className = "moveRowUpButton";
                     buttonUp.innerText = "Up";
+                    buttonUp.addEventListener("click", function(){
+                        var row = this.parentNode.parentNode.parentNode
+                        if (row.rowIndex != 1) {
+                            row.parentNode.insertBefore(row, row.previousSibling)
+                        }
+                    })
                     var buttonDown = document.createElement('button');
                     buttonDown.className = "moveRowDownButton";
                     buttonDown.innerText = "Down";

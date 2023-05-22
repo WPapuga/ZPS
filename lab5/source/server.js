@@ -92,6 +92,7 @@ app.get('/', (req, res) => {
                         if (row.rowIndex != 1) {
                             row.parentNode.insertBefore(row, row.previousSibling)
                         }
+                
                     })
                     var buttonDown = document.createElement('button');
                     buttonDown.className = "moveRowDownButton";
@@ -101,6 +102,7 @@ app.get('/', (req, res) => {
                         if (row.rowIndex != row.parentNode.rows.length - 1) {
                             row.parentNode.insertBefore(row.nextSibling, row)
                         }
+                    
                     })
 
                     var lastCell = document.createElement('div')
@@ -131,6 +133,7 @@ app.get('/', (req, res) => {
                         if (row.rowIndex != 1) {
                             row.parentNode.insertBefore(row, row.previousSibling)
                         }
+                
                     })
                     var buttonDown = document.createElement('button');
                     buttonDown.className = "moveRowDownButton";
@@ -140,6 +143,7 @@ app.get('/', (req, res) => {
                         if (row.rowIndex != row.parentNode.rows.length - 1) {
                             row.parentNode.insertBefore(row.nextSibling, row)
                         }
+              
                     })
 
                     var lastCell = document.createElement('div')
@@ -170,6 +174,7 @@ app.get('/', (req, res) => {
                         if (row.rowIndex != 1) {
                             row.parentNode.insertBefore(row, row.previousSibling)
                         }
+           
                     })
                     var buttonDown = document.createElement('button');
                     buttonDown.className = "moveRowDownButton";
@@ -179,6 +184,7 @@ app.get('/', (req, res) => {
                         if (row.rowIndex != row.parentNode.rows.length - 1) {
                             row.parentNode.insertBefore(row.nextSibling, row)
                         }
+        
                     })
                     
                     var lastCell = document.createElement('div')

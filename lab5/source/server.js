@@ -79,6 +79,16 @@ app.get('/', (req, res) => {
                     button.className = "removeRowButton";
                     button.innerText = "Delete";
                     button.setAttribute('onclick','deleteRow(this)');
+                    var buttonUp = document.createElement('button');
+                    buttonUp.className = "moveRowUpButton";
+                    buttonUp.innerText = "Up";
+                    buttonUp.setAttribute('onclick','deleteRow(this)');
+                    var buttonDown = document.createElement('button');
+                    buttonDown.className = "moveRowDownButton";
+                    buttonDown.innerText = "Down";
+                    buttonDown.setAttribute('onclick','deleteRow(this)');
+
+                    var row = document.createElement('row')
                     row.insertCell(3).append(button);
                 }
                 function addAudio() {
@@ -93,6 +103,15 @@ app.get('/', (req, res) => {
                     button.className = "removeRowButton";
                     button.innerText = "Delete";
                     button.setAttribute('onclick','deleteRow(this)');
+                    var buttonUp = document.createElement('button');
+                    buttonUp.className = "moveRowUpButton";
+                    buttonUp.innerText = "Up";
+                    buttonUp.setAttribute('onclick','deleteRow(this)');
+                    var buttonDown = document.createElement('button');
+                    buttonDown.className = "moveRowDownButton";
+                    buttonDown.innerText = "Down";
+                    buttonDown.setAttribute('onclick','deleteRow(this)');
+
                     row.insertCell(3).append(button);
                 }
                 function addImage() {
@@ -107,6 +126,15 @@ app.get('/', (req, res) => {
                     button.className = "removeRowButton";
                     button.innerText = "Delete";
                     button.setAttribute('onclick','deleteRow(this)');
+                    var buttonUp = document.createElement('button');
+                    buttonUp.className = "moveRowUpButton";
+                    buttonUp.innerText = "Up";
+                    buttonUp.setAttribute('onclick','deleteRow(this)');
+                    var buttonDown = document.createElement('button');
+                    buttonDown.className = "moveRowDownButton";
+                    buttonDown.innerText = "Down";
+                    buttonDown.setAttribute('onclick','deleteRow(this)');
+                    
                     row.insertCell(3).append(button);
                 }
                 function deleteRow(button) {

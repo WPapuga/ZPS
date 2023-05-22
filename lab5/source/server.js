@@ -78,15 +78,15 @@ app.get('/', (req, res) => {
                     var button = document.createElement('button');
                     button.className = "removeRowButton";
                     button.innerText = "Delete";
-                    button.setAttribute('onclick','deleteRow(this)');
+                    button.addEventListener("click", function(){
+                        this.parentNode.parentNode.parentNode.remove()
+                    })
                     var buttonUp = document.createElement('button');
-                    buttonUp.className = "moveRowUpButton(this)";
+                    buttonUp.className = "moveRowUpButton";
                     buttonUp.innerText = "Up";
-                    buttonUp.setAttribute('onclick','deleteRow(this)');
                     var buttonDown = document.createElement('button');
-                    buttonDown.className = "moveRowDownButton(this)";
+                    buttonDown.className = "moveRowDownButton";
                     buttonDown.innerText = "Down";
-                    buttonDown.setAttribute('onclick','deleteRow(this)');
 
                     var lastCell = document.createElement('div')
                     lastCell.append(button)
@@ -105,15 +105,15 @@ app.get('/', (req, res) => {
                     var button = document.createElement('button');
                     button.className = "removeRowButton";
                     button.innerText = "Delete";
-                    button.setAttribute('onclick','deleteRow(this)');
+                    button.addEventListener("click", function(){
+                        this.parentNode.parentNode.parentNode.remove()
+                    })
                     var buttonUp = document.createElement('button');
-                    buttonUp.className = "moveRowUpButton(this)";
+                    buttonUp.className = "moveRowUpButton";
                     buttonUp.innerText = "Up";
-                    buttonUp.setAttribute('onclick','deleteRow(this)');
                     var buttonDown = document.createElement('button');
-                    buttonDown.className = "moveRowDownButton(this)";
+                    buttonDown.className = "moveRowDownButton";
                     buttonDown.innerText = "Down";
-                    buttonDown.setAttribute('onclick','deleteRow(this)');
 
                     var lastCell = document.createElement('div')
                     lastCell.append(button)
@@ -132,28 +132,21 @@ app.get('/', (req, res) => {
                     var button = document.createElement('button');
                     button.className = "removeRowButton";
                     button.innerText = "Delete";
-                    button.setAttribute('onclick','deleteRow(this)');
+                    button.addEventListener("click", function(){
+                        this.parentNode.parentNode.parentNode.remove()
+                    })
                     var buttonUp = document.createElement('button');
-                    buttonUp.className = "moveRowUpButton(this)";
+                    buttonUp.className = "moveRowUpButton";
                     buttonUp.innerText = "Up";
-                    buttonUp.setAttribute('onclick','deleteRow(this)');
                     var buttonDown = document.createElement('button');
-                    buttonDown.className = "moveRowDownButton(this)";
+                    buttonDown.className = "moveRowDownButton";
                     buttonDown.innerText = "Down";
-                    buttonDown.setAttribute('onclick','deleteRow(this)');
                     
                     var lastCell = document.createElement('div')
-                    lastCell.append(button)
-                    lastCell.append(buttonUp)
-                    lastCell.append(buttonDown)
-                    row.insertCell(3).append(lastCell);
-                }
-                function deleteRow(button) {
-                    document.getElementById('playlist_table').deleteRow(button.parentNode.parentNode.rowIndex);        
-                }
-                function moveRowUpButton(button) {
-                    var row = this.parentNode.parentNode
-
+                    lastCell.appendChild(button)
+                    lastCell.appendChild(buttonUp)
+                    lastCell.appendChild(buttonDown)
+                    row.insertCell(3).appendChild(lastCell);
                 }
             </script>`
     page += `</body>`;

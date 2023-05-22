@@ -80,11 +80,11 @@ app.get('/', (req, res) => {
                     button.innerText = "Delete";
                     button.setAttribute('onclick','deleteRow(this)');
                     var buttonUp = document.createElement('button');
-                    buttonUp.className = "moveRowUpButton";
+                    buttonUp.className = "moveRowUpButton(this)";
                     buttonUp.innerText = "Up";
                     buttonUp.setAttribute('onclick','deleteRow(this)');
                     var buttonDown = document.createElement('button');
-                    buttonDown.className = "moveRowDownButton";
+                    buttonDown.className = "moveRowDownButton(this)";
                     buttonDown.innerText = "Down";
                     buttonDown.setAttribute('onclick','deleteRow(this)');
 
@@ -104,11 +104,11 @@ app.get('/', (req, res) => {
                     button.innerText = "Delete";
                     button.setAttribute('onclick','deleteRow(this)');
                     var buttonUp = document.createElement('button');
-                    buttonUp.className = "moveRowUpButton";
+                    buttonUp.className = "moveRowUpButton(this)";
                     buttonUp.innerText = "Up";
                     buttonUp.setAttribute('onclick','deleteRow(this)');
                     var buttonDown = document.createElement('button');
-                    buttonDown.className = "moveRowDownButton";
+                    buttonDown.className = "moveRowDownButton(this)";
                     buttonDown.innerText = "Down";
                     buttonDown.setAttribute('onclick','deleteRow(this)');
 
@@ -127,18 +127,26 @@ app.get('/', (req, res) => {
                     button.innerText = "Delete";
                     button.setAttribute('onclick','deleteRow(this)');
                     var buttonUp = document.createElement('button');
-                    buttonUp.className = "moveRowUpButton";
+                    buttonUp.className = "moveRowUpButton(this)";
                     buttonUp.innerText = "Up";
                     buttonUp.setAttribute('onclick','deleteRow(this)');
                     var buttonDown = document.createElement('button');
-                    buttonDown.className = "moveRowDownButton";
+                    buttonDown.className = "moveRowDownButton(this)";
                     buttonDown.innerText = "Down";
                     buttonDown.setAttribute('onclick','deleteRow(this)');
                     
-                    row.insertCell(3).append(button);
+                    var lastCell = document.createElement('div')
+                    lastCell.append(button)
+                    lastCell.append(buttonUp)
+                    lastCell.append(buttonDown)
+                    row.insertCell(3).append(lastCell);
                 }
                 function deleteRow(button) {
                     document.getElementById('playlist_table').deleteRow(button.parentNode.parentNode.rowIndex);        
+                }
+                function moveRowUpButton(button) {
+                    var row = this.parentNode.parentNode
+
                 }
             </script>`
     page += `</body>`;

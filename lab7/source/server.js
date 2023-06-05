@@ -99,6 +99,7 @@ app.get('/', (req, res) => {
                             row.parentNode.insertBefore(row.nextSibling, row)
                         }  else {
                             row.parentNode.insertBefore(row, header.nextSibling)
+                            this.dispatchEvent(new Event("click"))
                         }
                     })
 
@@ -142,6 +143,7 @@ app.get('/', (req, res) => {
                             row.parentNode.insertBefore(row.nextSibling, row)
                         } else {
                             row.parentNode.insertBefore(row, header.nextSibling)
+                            this.dispatchEvent(new Event("click"))
                         }
                     })
 
@@ -174,6 +176,7 @@ app.get('/', (req, res) => {
                             row.parentNode.insertBefore(row, row.previousSibling)
                         } else {
                             table.tBodies[0].appendChild(row)
+                            this.dispatchEvent(new Event("click"))
                         }
                     })
                     var buttonDown = document.createElement('button');

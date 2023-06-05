@@ -97,6 +97,8 @@ app.get('/', (req, res) => {
                         var row = this.parentNode.parentNode.parentNode
                         if (row.rowIndex != row.parentNode.rows.length - 1) {
                             row.parentNode.insertBefore(row.nextSibling, row)
+                        }  else {
+                            row.parentNode.insertBefore(row, header.nextSibling)
                         }
                     })
 
@@ -138,6 +140,8 @@ app.get('/', (req, res) => {
                         var row = this.parentNode.parentNode.parentNode
                         if (row.rowIndex != row.parentNode.rows.length - 1) {
                             row.parentNode.insertBefore(row.nextSibling, row)
+                        } else {
+                            row.parentNode.insertBefore(row, header.nextSibling)
                         }
                     })
 
@@ -179,6 +183,8 @@ app.get('/', (req, res) => {
                         var row = this.parentNode.parentNode.parentNode
                         if (row.rowIndex != row.parentNode.rows.length - 1) {
                             row.parentNode.insertBefore(row.nextSibling, row)
+                        } else {
+                            row.parentNode.insertBefore(row, header.nextSibling)
                         }
                     })
                     

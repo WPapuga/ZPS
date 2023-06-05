@@ -20,8 +20,9 @@ app.get('/', (req, res) => {
                         przeglądarka nie obsługuje video
                     </video>`
             page += `<br> <button id="videoCancel" type="button" onclick="cancelVideo()">Anuluj video</button>`;
-            page += `     <button id="videoAdd" type="button" onclick="addVideo()">Add video</button> <br>`
-    
+            page += `     <button id="videoAdd" type="button" onclick="addVideo()">Add video</button>`
+            page += `     <button id="videoPlay" type="button" onclick="document.getElementById('videoPlayer').play()">Play Video</button>`
+            page += `     <button id="videoPause" type="button" onclick="document.getElementById('videoPlayer').pause()">Pause Video</button> <br>`
     }
     if(req.query.audioFile != undefined){
             page += `<audio id="audioPlayer" controls>

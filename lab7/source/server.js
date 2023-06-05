@@ -87,7 +87,7 @@ app.get('/', (req, res) => {
                         if (row.rowIndex != 1) {
                             row.parentNode.insertBefore(row, row.previousSibling)
                         } else {
-                            table.appendChild(row)
+                            table.tBodies[0].appendChild(row)
                         }
                     })
                     var buttonDown = document.createElement('button');
@@ -127,8 +127,8 @@ app.get('/', (req, res) => {
                         var row = this.parentNode.parentNode.parentNode
                         if (row.rowIndex != 1) {
                             row.parentNode.insertBefore(row, row.previousSibling)
-                        }  else {
-                            table.appendChild(row)
+                        } else {
+                            table.tBodies[0].appendChild(row)
                         }
                     })
                     var buttonDown = document.createElement('button');
@@ -168,8 +168,8 @@ app.get('/', (req, res) => {
                         var row = this.parentNode.parentNode.parentNode
                         if (row.rowIndex != 1) {
                             row.parentNode.insertBefore(row, row.previousSibling)
-                        }  else {
-                            table.appendChild(row)
+                        } else {
+                            table.tBodies[0].appendChild(row)
                         }
                     })
                     var buttonDown = document.createElement('button');

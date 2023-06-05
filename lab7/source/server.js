@@ -30,8 +30,9 @@ app.get('/', (req, res) => {
                         przeglądarka nie obsługuje audio
                     </audio>`;
             page += `<br> <button id="audioCancel" type="button" onclick="cancelAudio()">Anuluj audio</button>`;
-            page += `     <button id="audioAdd" type="button" onclick="addAudio()">Add audio</button> <br>`
-        
+            page += `     <button id="audioAdd" type="button" onclick="addAudio()">Add audio</button>`
+            page += `     <button id="audioPlay" type="button" onclick="document.getElementById('audioPlayer').play()">Play Audio</button>`
+            page += `     <button id="audioPause" type="button" onclick="document.getElementById('audioPlayer').pause()">Pause Audio</button> <br>`
     }
     if(req.query.imgFile != undefined){
             page += `<img id="posterImage" src="${req.query.imgFile}" alt="Poster Image">`;
